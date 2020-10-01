@@ -5,7 +5,7 @@ This is utils for Go project.
 ## auth:
 a package for generate and validate access token.
 access token contains the following structure.
-```
+```go
 UserID   interface{}
 Username *string    
 AppID    *string    
