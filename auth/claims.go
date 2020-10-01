@@ -21,11 +21,11 @@ type UserClaims struct {
 func (u *UserClaims) GenerateToken() (*string, error) {
 
 	// set expire time
-	u.ExpiresAt = time.Now().Unix() + expTime
+	u.ExpiresAt = time.Now().Unix() + ExpTime
 
 	// new with claims
 	token := jwt.NewWithClaims(jwt.SigningMethodHS256, u)
-	tokenString, err := token.SignedString(secretKey)
+	tokenString, err := token.SignedString(SecretKey)
 	if err != nil {
 		return nil, err
 	}
