@@ -43,7 +43,7 @@ fmt.Println(Token)
 
 ### Validate token:
 
-#### ginMiddleware:
+#### **ginMiddleware**:
 
  for adding protection to your route add gin Middleware like this:
  ```go
