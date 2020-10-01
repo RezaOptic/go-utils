@@ -19,7 +19,7 @@ func GinJwtAuth(function gin.HandlerFunc, selfAccess, optional bool, roles ...st
 		token := strings.Replace(ctx.GetHeader("Authorization"), "Bearer ", "", -1)
 		if token == "" && optional {
 			// token is valid
-			ctx.Set(claimKey, &UserClaims{})
+			ctx.Set(claimKey, UserClaims{})
 			// call
 			function(ctx)
 			ctx.Next()
