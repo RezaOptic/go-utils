@@ -35,19 +35,19 @@ fmt.Println(Token)
 
 #### Validate token:
 
-- ginMiddleware:
+##### ginMiddleware:
 
-for adding protection to your route add gin Middleware like this:
-```
-Foo.GET("/foo/user/:user_id", auth.JwtAuth(BarController, SELF_ACCESS, OPTIONAL, ROLES))
-```
-and in your `BarController` can get user token information like this:
-```
-UserTokenInfotmation := auth.GetClaimFromContext(c)
-```
-
-`SELF_ACCESS`: if you have `:user_id` param in your path for authorization TokenUserID and `user_id` must be the same.
-
-`OPTIONAL`: if you set this flag to true sending `Authorization` in the header is optional and if you don't send the token `auth.GetClaimFromContext(c)` return an empty struct.
-
-`ROLES`: roles is an array of string token must include these roles.
+> for adding protection to your route add gin Middleware like this:
+> ```
+> Foo.GET("/foo/user/:user_id", auth.JwtAuth(BarController, SELF_ACCESS, OPTIONAL, ROLES))
+> ```
+> and in your `BarController` can get user token information like this:
+> ```
+> UserTokenInfotmation := auth.GetClaimFromContext(c)
+> ```
+>
+> `SELF_ACCESS`: if you have `:user_id` param in your path for authorization TokenUserID and `user_id` must be the same.
+>
+> `OPTIONAL`: if you set this flag to true sending `Authorization` in the header is optional and if you don't send the token `auth.GetClaimFromContext(c)` return an empty struct.
+>
+> `ROLES`: roles is an array of string token must include these roles.
