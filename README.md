@@ -1,6 +1,6 @@
 # go-utils
 
-###auth:
+### auth:
 a package for generate and validate access token.
 access token contains the following structure.
 ```
@@ -12,16 +12,16 @@ Status   *string
 Roles    []string   
 ``` 
 
-####how to use:
+#### how to use:
 
-#####initialize:
+##### initialize:
 
 - at the first, we need to initialize the package for configs.
 ```
 auth.Init(ACCESS_TOKEN_SECRET, EXPIRE_TIME_IN_SECOND)
 ```
 
-#####generate token:
+##### generate token:
 ```
 userClaim := auth.UserClaims{UserID: UserID}
 Token, err := userClaim.Token()
@@ -31,7 +31,7 @@ if err != nil {
 fmt.Println(Token)
 ```
 
-#####validate token:
+##### validate token:
 
 - ginMiddleware:
 
