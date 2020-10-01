@@ -13,7 +13,7 @@ func ValidateToken(tokenString string) (*UserClaims, error) {
 
 	// parse with claims
 	token, err := jwt.ParseWithClaims(tokenString, &UserClaims{}, func(token *jwt.Token) (interface{}, error) {
-		return secretKey, nil
+		return SecretKey, nil
 	})
 	if err != nil {
 		return nil, errors.New(errTokenNotValid)

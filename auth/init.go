@@ -3,9 +3,8 @@ package auth
 import "errors"
 
 var (
-	secretKey []byte
-	// TODO: need refresh token for reNew jwt
-	expTime int64 = 8640000 // 100 days
+	SecretKey []byte
+	ExpTime   int64
 )
 
 const (
@@ -23,7 +22,7 @@ const (
 )
 
 //Init manual
-func Init(secret string) error {
+func Init(secret string, expTime int64) error {
 
 	// check secret length
 	if len(secret) < 10 {
@@ -31,7 +30,9 @@ func Init(secret string) error {
 	}
 
 	// set secret key
-	secretKey = []byte(secret)
+	SecretKey = []byte(secret)
 
+	// set expire time
+	ExpTime = expTime
 	return nil
 }
